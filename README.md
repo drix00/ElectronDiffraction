@@ -1,2 +1,2 @@
-# ElectronDiffraction
-Electron diffraction scripts developped when reading electron diffraction books.
+# Electron Diffraction
+Electron diffraction scripts developed when reading electron diffraction books.
