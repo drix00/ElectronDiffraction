@@ -90,3 +90,8 @@ ENV/
 
 # PyCharm project files
 .idea
+
+# Eclipse PyDev project files
+.settings
+.project
+.pydevproject
