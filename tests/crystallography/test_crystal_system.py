@@ -39,6 +39,7 @@ import electrondiffraction.crystallography.crystal_system as crystal_system
 
 # Globals and constants variables.
 
+
 class Test_crystal_system(unittest.TestCase):
     """
     TestCase class for the module `${moduleName}`.
@@ -63,7 +64,7 @@ class Test_crystal_system(unittest.TestCase):
         First test to check if the testcase is working with the testing framework.
         """
 
-        #self.fail("Test if the testcase is working.")
+        # self.fail("Test if the testcase is working.")
         self.assert_(True)
 
     def test_gij_nm2(self):
@@ -83,10 +84,31 @@ class Test_crystal_system(unittest.TestCase):
         for g_ref_nm2, g_nm2 in zip(g_ij_ref_nm2.flat, g_ij_nm2.flat):
             self.assertAlmostEqual(g_ref_nm2, g_nm2, 5)
 
-        #self.fail("Test if the testcase is working.")
+        # self.fail("Test if the testcase is working.")
+
+    def test_name(self):
+        """
+        First test to check if the testcase is working with the testing framework.
+        """
+
+        triclinic = crystal_system.Triclinic(1, 1, 1, 0.5, 0.5, 0.5)
+        self.assertEqual("triclinic", triclinic.name)
+
+        # self.fail("Test if the testcase is working.")
+        self.assert_(True)
+
+    def test_symbol(self):
+        """
+        First test to check if the testcase is working with the testing framework.
+        """
+
+        triclinic = crystal_system.Triclinic(1, 1, 1, 0.5, 0.5, 0.5)
+        self.assertEqual("a", triclinic.symbol)
+
+        # self.fail("Test if the testcase is working.")
+        self.assert_(True)
 
 
 if __name__ == '__main__':  # pragma: no cover
     import nose
-
     nose.runmodule()

@@ -70,9 +70,9 @@ def angle_rad(crystal, vector_p, vector_q):
 
     factor = denominator / (norm_p * norm_q)
 
-    angle_rad = np.arccos(factor)
+    angle_value_rad = np.arccos(factor)
 
-    return angle_rad
+    return angle_value_rad
 
 
 def angle2_rad(crystal, vector_p, vector_q):
@@ -86,6 +86,6 @@ def angle2_rad(crystal, vector_p, vector_q):
     denominator = np.sqrt(matrix[0, 0]) * np.sqrt(matrix[1, 1])
     factor = nominator / denominator
 
-    angle_rad = np.arccos(factor)
+    angle_value_rad = np.arccos(factor)
 
-    return angle_rad
+    return angle_value_rad

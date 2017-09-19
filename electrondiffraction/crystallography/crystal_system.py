@@ -38,13 +38,26 @@ import numpy as np
 
 # Globals and constants variables.
 
-class CrystalSystem():
+
+class LatticeParameters(object):
     a_nm = None
     b_nm = None
     c_nm = None
     alpha_rad = None
     beta_rad = None
     gamma_rad = None
+
+
+class CrystalSystem(object):
+    a_nm = None
+    b_nm = None
+    c_nm = None
+    alpha_rad = None
+    beta_rad = None
+    gamma_rad = None
+
+    name = None
+    symbol = None
 
     def __init__(self, a_nm, b_nm, c_nm, alpha_rad, beta_rad, gamma_rad):
         self.a_nm = a_nm
@@ -73,7 +86,10 @@ class CrystalSystem():
 
 
 class Triclinic(CrystalSystem):
-    pass
+    def __init__(self, a_nm, b_nm, c_nm, alpha_rad, beta_rad, gamma_rad):
+        super().__init__(a_nm, b_nm, c_nm, alpha_rad, beta_rad, gamma_rad)
+        self.name = "triclinic"
+        self.symbol = "a"
 
 
 class Monoclinic(CrystalSystem):

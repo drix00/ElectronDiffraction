@@ -37,6 +37,7 @@ import numpy as np
 
 # Globals and constants variables.
 
+
 def gc_nm2(a_nm):
     tensor_nm2 = np.zeros((3, 3))
 

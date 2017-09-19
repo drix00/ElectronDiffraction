@@ -31,6 +31,7 @@ Equations to compute the reciprocal metric tensor for each crystal system.
 # Third party modules.
 import numpy as np
 
+
 # Local modules.
 
 # Project modules.
@@ -146,7 +147,8 @@ def _compute_F(a_rad, b_rad, g_rad):
 def _compute_omega(a_nm, b_nm, c_nm, alpha_rad, beta_rad, gamma_rad):
     factor = a_nm * b_nm * c_nm
     factor = factor * factor
-    term1 = np.cos(alpha_rad) * np.cos(alpha_rad) + np.cos(beta_rad) * np.cos(beta_rad) + np.cos(gamma_rad) * np.cos(gamma_rad)
+    term1 = np.cos(alpha_rad) * np.cos(alpha_rad) + np.cos(beta_rad) * np.cos(beta_rad) + \
+            np.cos(gamma_rad) * np.cos(gamma_rad)
     term2 = 2.0 * np.cos(alpha_rad) * np.cos(beta_rad) * np.cos(gamma_rad)
 
     omega = factor * (1.0 - term1 + term2)
