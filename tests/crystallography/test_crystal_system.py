@@ -86,6 +86,59 @@ class Test_crystal_system(unittest.TestCase):
 
         # self.fail("Test if the testcase is working.")
 
+    def test_length_nm(self):
+        """
+        Test the calculation of the length of a vector.
+
+        From Marc De Graef Introduction to Conventional Transmission book (2003).
+        """
+
+        # Example 1.2
+        distance_ref_nm = np.sqrt(5) / 4.0
+        crystal = crystal_system.Tetragonal(0.5, 1.0)
+        vector = (0.5 - 0.5, 0.0 - 0.5, 0.5 - 0.0)
+        distance_nm = crystal.length_nm(vector)
+
+        self.assertAlmostEqual(distance_ref_nm, distance_nm, 5)
+
+        # self.fail("Test if the testcase is working.")
+
+    def test_dot_nm2(self):
+        """
+        Test the calculation of the dot product of two vectors.
+
+        From Marc De Graef Introduction to Conventional Transmission book (2003).
+        """
+
+        # Example 1.3
+        product_ref_nm2 = 5.0 / 4.0
+        crystal = crystal_system.Tetragonal(0.5, 1.0)
+        vector1 = (1, 2, 0)
+        vector2 = (3, 1, 1)
+        product_nm2 = crystal.dot_nm2(vector1, vector2)
+
+        self.assertAlmostEqual(product_ref_nm2, product_nm2, 5)
+
+        # self.fail("Test if the testcase is working.")
+
+    def test_angle_deg(self):
+        """
+        Test the calculation of the angle between two vectors.
+
+        From Marc De Graef Introduction to Conventional Transmission book (2003).
+        """
+
+        # Example 1.3
+        angle_ref_deg = 53.30
+        crystal = crystal_system.Tetragonal(0.5, 1.0)
+        vector1 = (1, 2, 0)
+        vector2 = (3, 1, 1)
+        angle_deg = crystal.angle_deg(vector1, vector2)
+
+        self.assertAlmostEqual(angle_ref_deg, angle_deg, 2)
+
+        # self.fail("Test if the testcase is working.")
+
     def test_name(self):
         """
         First test to check if the testcase is working with the testing framework.

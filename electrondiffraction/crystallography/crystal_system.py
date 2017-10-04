@@ -80,6 +80,26 @@ class CrystalSystem(object):
 
         return g_ij_nm2
 
+    def length_nm(self, vector):
+        value = np.sqrt(self.dot_nm2(vector, vector))
+
+        return value
+
+    def dot_nm2(self, vector1, vector2):
+        p = np.array(vector1)
+        q = np.array(vector2)
+        value = np.dot(p.T, np.dot(self.gij_nm2, q))
+
+        return value
+
+    def angle_deg(self, vector1, vector2):
+        nominator = self.dot_nm2(vector1, vector2)
+        denominator = self.length_nm(vector1) * self.length_nm(vector2)
+        theta_rad = np.arccos(nominator/denominator)
+        theta_deg = np.degrees(theta_rad)
+
+        return theta_deg
+
     @property
     def gij_nm2(self):
         return self._compute_direct_metric_tensor()
